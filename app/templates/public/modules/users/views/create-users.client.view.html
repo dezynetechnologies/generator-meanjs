@@ -1,11 +1,10 @@
-<section data-ng-controller="<%= classifiedPluralName %>Controller" data-ng-init="setFormFields(false)">
+<section data-ng-controller="CreateUsersController" data-ng-init="setFormFields(false)">
     <div class="page-header">
-        <h1>New <%= humanizedSingularName %></h1>
+        <h1>New User</h1>
     </div>
     <div class="col-md-12">
         <form class="form-horizontal" data-ng-submit="create()" novalidate>
-
-          <formly-form model="<%= camelizedSingularName %>" fields="formFields">
+          <formly-form model="user" fields="formFields">
     			</formly-form>
 
           <hr/>
@@ -13,7 +12,7 @@
               <button type="submit" class="btn btn-success">
                 <i class="glyphicon glyphicon-ok"></i> Save
               </button>
-              <a class="btn btn-danger" href="/#!/<%= camelizedPluralName %>">
+              <a class="btn btn-danger" href="/#!/users/profiles/list">
                 <i class="glyphicon glyphicon-remove"></i> Cancel
               </a>
           </div>

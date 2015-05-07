@@ -12,7 +12,7 @@ One of the most frequently asked features from MEAN users is a way to scaffold t
 
 So, we set out to work on the features we thought every developer needs, and we are proud to present the official MEAN.JS Yeoman generator. It includes a set of simple tools you can use to make your MEAN application development easier and way more fun.
 
-
+##NOTE: This one uses the lumx material design frontend framework instead of Bootstrap
 
 ## Getting Started
 

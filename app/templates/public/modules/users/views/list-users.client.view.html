@@ -1,0 +1,43 @@
+<section data-ng-controller="ListUsersController" data-ng-init="find()">
+    <div class="page-header">
+        <h1>Users</h1>
+    </div>
+    <div class="pull-right">
+   <a type="button" class="btn btn-success" href="/#!/users/profiles/create">
+     <i class="glyphicon glyphicon-open"></i> New User
+   </a>
+ </div>
+
+    <div>
+    <table ng-table="tableParams" show-filter="true">
+        <tr ng-repeat="user in users">
+            <td data-title="'Username'" sortable="'username'" filter="{ 'username': 'text' }">{{user.username}}</td>
+            <td data-title="'First Name'" sortable="'firstName'" filter="{ 'firstName': 'text' }">{{user.firstName}}</td>
+            <td data-title="'Last Name'" sortable="'lastName'" filter="{ 'lastName': 'text' }">{{user.lastName}}</td>
+            <td data-title="'Email'" sortable="'email'" filter="{ 'email': 'text' }">{{user.email}}</td>
+            <td data-title="'Created On: '" sortable="'created'" filter="{ 'created': 'text' }">{{user.created}}</td>
+            <td>
+                <div class="table-actions">
+                </td>
+            <td>
+               <div class="table-actions">
+                    <a class="btn btn-primary" title="View" href="/#!/users/profiles/{{user._id}}">
+                        <span class="glyphicon glyphicon-eye-open"></span>
+                    </a>
+                    <a class="btn btn-primary" title="Edit" href="/#!/users/profiles/{{user._id}}/edit">
+                        <span class="glyphicon glyphicon-edit"></span>
+                    </a>
+                    <a class="btn btn-danger" title="Remove" ng-really-message="Are you sure ?" ng-really-click="remove(user)" item="user">
+                      <span class="glyphicon glyphicon-remove-circle"></span>
+                    </a>
+                </div>
+            </td>
+        </tr>
+    </table>
+</div>
+
+
+    <div class="alert alert-warning text-center" data-ng-hide="!users.$resolved || users.length">
+        No Users yet, why don't you <a href="/#!/users/profiles/create">create one</a>?
+    </div>
+</section>

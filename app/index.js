@@ -135,6 +135,7 @@ var MeanGenerator = yeoman.generators.Base.extend({
 		this.directory('public/modules/core/config');
 		this.directory('public/modules/core/controllers');
 		this.directory('public/modules/core/css');
+		this.directory('public/modules/core/directives');
 		this.directory('public/modules/core/img');
 		this.directory('public/modules/core/services');
 		this.directory('public/modules/core/tests');
